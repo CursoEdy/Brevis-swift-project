@@ -11,7 +11,7 @@ import Foundation
 
 @Observable
 class HotkeyCategoryViewModel {
-    var hotketCategoryModels: [HotkeyCategoryModel] = []
+    var hotkeyCategoryModels: [HotkeyCategoryModel] = []
     
     init() {
         let productCategory: HotkeyCategoryModel = .init(name: "Product", hotkeyModels: [
@@ -154,7 +154,7 @@ class HotkeyCategoryViewModel {
             .init(modifiers: [.command, .option], character: "C", text: "Commit changes"),
         ])
         
-        hotketCategoryModels = [
+        hotkeyCategoryModels = [
             productCategory,
             schemeCategory,
             hideOrShowPanelsCategory,
