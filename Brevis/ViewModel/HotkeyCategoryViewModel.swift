@@ -117,23 +117,19 @@ class HotkeyCategoryViewModel {
                 ),
             ]
         )
-        let inspectorCategory: HotkeyCategoryModel = .init(name: "Inspector", hotkeyModels: [
-            .init(modifiers: [.option, .command], character: "1", text: "File"),
-            .init(modifiers: [.option, .command], character: "2", text: "History"),
-            .init(modifiers: [.option, .command], character: "3", text: "Quick Help"),
-            .init(modifiers: [.option, .command], character: "4", text: "Show Inspector"),
-        ])
-        let structureCategory: HotkeyCategoryModel = .init(name: "Structure", hotkeyModels: [
+        
+        let strucCategory: HotkeyCategoryModel = .init(name: "Structure", hotkeyModels: [
             .init(modifiers: [.command], character: "/", text: "Toggle comment/uncomment"),
             .init(modifiers: [.control], character: "I", text: "Re-indent selected code"),
             .init(modifiers: [.control], character: "M", text: "Format multiple lines"),
             .init(modifiers: [.command, .shift], character: "[", text: "Shift Left"),
             .init(modifiers: [.command, .shift], character: "]", text: "Shift Right"),
         ])
-        let editingCategory: HotkeyCategoryModel = .init(name: "Editing", hotkeyModels: [
+        let editCategory: HotkeyCategoryModel = .init(name: "Editing", hotkeyModels: [
             .init(modifiers: [.command], character: "C", text: "Copy"),
             .init(modifiers: [.command], character: "V", text: "Paste"),
-            .init(modifiers: [.command, .shift, .option], character: "V", text: "Paste and Preserve Formatting"),            .init(modifiers: [.command], character: "D", text: "Duplicate"),
+            .init(modifiers: [.command, .shift, .option], character: "V", text: "Paste and Preserve Formatting"),
+            .init(modifiers: [.command], character: "D", text: "Duplicate"),
         ])
         let miscCategory: HotkeyCategoryModel = .init(name: "Miscellaneous", hotkeyModels: [
             .init(modifiers: [.command, .shift], character: "A", text: "Quick actions"),
@@ -154,18 +150,26 @@ class HotkeyCategoryViewModel {
             .init(modifiers: [.command, .option], character: "C", text: "Commit changes"),
         ])
         
+        let inspecCategory: HotkeyCategoryModel = .init(name: "Inspector", hotkeyModels: [
+            .init(modifiers: [.option, .command], character: "1", text: "File"),
+            .init(modifiers: [.option, .command], character: "2", text: "History"),
+            .init(modifiers: [.option, .command], character: "3", text: "Quick Help"),
+            .init(modifiers: [.option, .command], character: "4", text: "Show Inspector"),
+        ])
+        
+        
         hotkeyCategoryModels = [
             productCategory,
             schemeCategory,
             hideOrShowPanelsCategory,
             navigationCategory,
-            inspectorCategory,
-            structureCategory,
-            editingCategory,
-            debuggingCategory,
-            fileMenuCommandsCategory,
-            sourceControlCategory,
-            miscCategory,
+            inspecCategory,
+//            strucCategory,
+//            editCategory,
+//            debuggingCategory,
+//            fileMenuCommandsCategory,
+//            sourceControlCategory,
+//            miscCategory,
         ]
     }
 }

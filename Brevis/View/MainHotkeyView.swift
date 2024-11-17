@@ -18,7 +18,11 @@ struct MainHotkeyView: View {
                 //Sections for each category
                 List(vm.hotkeyCategoryModels) {
                     hotkeyCategory in
-                    Text(hotkeyCategory.name) // TODO: implement some section view
+                    HotkeySectionView(
+                        hotkeyCategoryName: hotkeyCategory.name,
+                        hotkeyModels: hotkeyCategory.hotkeyModels,
+                        searchQuqery: searchQuery
+                    )
                 }
             }.navigationTitle("Xcode Hotkeys")
                 .searchable(text: $searchQuery, prompt: "Search...")
