@@ -15,7 +15,6 @@ struct MainHotkeyView: View {
     var body: some View {
         NavigationStack {
             Form {
-                //Sections for each category
                 List(vm.hotkeyCategoryModels) {
                     hotkeyCategory in
                     HotkeySectionView(
@@ -24,8 +23,11 @@ struct MainHotkeyView: View {
                         searchQuqery: searchQuery
                     )
                 }
+                
             }.navigationTitle("Xcode Hotkeys")
                 .searchable(text: $searchQuery, prompt: "Search...")
+            
+            KeySymbolView()
         }
     }
 }
