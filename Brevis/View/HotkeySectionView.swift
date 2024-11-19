@@ -20,7 +20,13 @@ struct HotkeySectionView: View {
     
     //TODO: filter according to 'searchQuqery'
     var filteredHotkeyModels: [HotkeyModel] {
-        hotkeyModels
+        if searchQuqery.count <= 1 {
+            return hotkeyModels
+        } else {
+            return hotkeyModels.filter {
+                $0.text.lowercased().contains(searchQuqery.lowercased())
+            }
+        }
     }
     
     var body: some View {
